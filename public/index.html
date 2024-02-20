@@ -1,0 +1,33 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login/Register Page</title>
+</head>
+<body>
+  <div class="container">
+    <form id="registerForm">
+      <h2>Register</h2>
+      <label for="regUsername">Username:</label>
+      <input type="text" id="regUsername" name="regUsername" required>
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" name="regPassword" required>
+      <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <form id="loginForm">
+      <h2>Login</h2>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="loginUsername" required>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="loginPassword" required>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
