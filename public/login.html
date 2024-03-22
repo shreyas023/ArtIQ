@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Angular/angular.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="loginController">
+    <!-- login.html -->
+    <form name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+        <input type="email" name="email" ng-model="user.email" required />
+        <input type="password" name="password" ng-model="user.password" required />
+        <input type="submit" value="Login" />
+    </form>
+    <script src="loginController.js"></script>
+</body>
+
+</html>
