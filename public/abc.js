@@ -10,14 +10,19 @@ function saveUsersToLocalStorage() {
 // Function to handle login
 function login(event) {
     event.preventDefault(); // Prevent form submission
+    console.log("Users list:");
+        users.forEach(function(user) {
+            console.log("Username:", user.username, "Password:", user.password);
+        });
 
     // Get username and password from the form
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    var oldusername = document.getElementById('username').value;
+    var oldpassword = document.getElementById('password').value;
+    var name = document.getElementById('newname').value;
 
     // Check if the username and password match any user in the list
     var user = users.find(function(user) {
-        return user.username === username && user.password === password;
+        return user.username === oldusername && user.password === oldpassword;
     });
 
     // If a user is found, log them in
@@ -28,7 +33,7 @@ function login(event) {
         });
         alert('Login successful!');
         // You can redirect to another page or perform any other action here
-        window.location.href = 'ok.html';
+        window.location.href = 'ok.html?name=' + encodeURIComponent(name);
     } else {
         // If no user is found, display an error message
         var loginError = document.getElementById('login-error');

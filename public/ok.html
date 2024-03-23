@@ -20,7 +20,7 @@
 }
 
 // Retrieve the name parameter from the URL
-var name = getParameterByName('name');
+var name = encodeURIComponent(getParameterByName('name')) || getParameterByName('name');
 
 // Check if the name parameter exists and display it
 if (name) {
