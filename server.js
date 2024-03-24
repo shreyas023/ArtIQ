@@ -1,7 +1,7 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = 3000;
@@ -32,20 +32,61 @@ app.get('/', (req, res) => {
 });
 
 // Register endpoint
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
+  console.log(req.body); // Log the request body to debug
   const { username, password } = req.body;
 
-  // Insert user into the database
-  const query = 'INSERT INTO login_register (username, password) VALUES (?, ?)';
-  db.query(query, [username, password], (err, result) => {
+  if (!username || !password) {
+    return res.status(400).send('Username and password are required');
+  }
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Insert user into the database
+    const query = 'INSERT INTO login_register (username, password) VALUES (?, ?)';
+    db.query(query, [username, hashedPassword], (err, result) => {
+      if (err) {
+        console.error('Registration failed: ' + err.message);
+        return res.status(500).send('Registration failed');
+      }
+
+      console.log('User registered:', result);
+      console.log('sab theek toh hai');
+      res.redirect('/home.html');
+    });
+  } catch (error) {
+    console.error('Error hashing password:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// Login endpoint
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Check user in the database
+  const query = 'SELECT * FROM login_register WHERE username = ?';
+  db.query(query, [username], async (err, results) => {
     if (err) {
-      console.error('Registration failed: ' + err.message);
-      res.status(500).send('Registration failed');
+      console.error('Login failed: ' + err.message);
+      res.status(500).send('Login failed');
       return;
     }
 
-    console.log('User registered:', result);
-    res.status(200).send('Registration successful');
+    if (results.length === 0) {
+      res.status(401).send('User not found');
+      return;
+    }
+
+    const user = results[0];
+    const match = await bcrypt.compare(password, user.password);
+
+    if (match) {
+      res.redirect('/home.html');
+    } else {
+      res.status(401).send('Password is incorrect');
+    }
   });
 });
 
