@@ -1,98 +1,10 @@
-
-        /* Style the links inside the navigation bar */
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 12px;
-        }
-
-        /* Change the color of links on hover */
-        .topnav a:hover {
-            background-color: #a9e84a;
-            color: black;
-
-        }
-
-        /* Add a color to the active/current link */
-        .topnav a.active {
-            
-            color: white;
-        }
-
-        /* Position the menu items */
-        .topnav .leftmost {
-            float: left;
-        }
-
-        .topnav .middle {
-            float: none;
-            margin-left: 20px;
-        }
-
-        .topnav .rightmost {
-            float: right;
-        }
-        .second{
-            position: absolute;
-            display: flex;
-            margin: 0 auto;
-            top: 50%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            border-radius: 2px;
-            padding-bottom: 0;
-
-        }
-        p.one{
-            font-size: 300%;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-weight: 300;
-        }
-
-        .search-container {
-    position: relative;
-    width: 200px; /* Set the width as per your design */
-    height: 20px;
-    display: flex;
-    align-items: center;
-    border-radius: 2px 2px 2px 2px;
-}
-
-.search-input-wrapper {
-    position: relative;
-}
-
-.search-input {
-    padding-right: 40px; /* Adjust padding to accommodate the button */
-    width: 300px;
-    padding: 10px;
-    border-radius:20px 20px 20px 20px;
-
-}
-
-.search-button {
-    position: absolute;
-    top: 5px;
-    right: 6px;
-    height: 80%;
-    width: 40px; /* Adjust width as per your design */
-    border: none;
-    border-radius: 20px 20px 20px 20px;
-    background-color: #cae655;
-    cursor: pointer;
-}
-
-.search-icon {
-    font-size: 16px; /* Adjust font size as per your design */
-}
-.third{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-}
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="main-style.css">
 </head>
 <body>
     <div class="topnav">
@@ -114,7 +26,7 @@
         <table>
             <tr>
                 <td>
-                    <video width="500px" height="300px" autoplay muted loop>
+                    <video width="500px" height="300px" controls>
                         <source src="Untitled video - Made with Clipchamp.mp4 " type="video/mp4">
                 </td>
                 <td>
@@ -144,6 +56,25 @@
    
    
 
-    <!-- Your other homepage content goes here -->
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Retrieve the name parameter from the URL
+        var name = getParameterByName('name');
+        // Check if the name parameter exists and display it
+        if (name) {
+            document.getElementById('user-name').textContent = 'Welcome, ' + name + '!';
+        } else {
+            document.getElementById('user-name').textContent = 'Welcome, guest!';
+        }
+    </script>
 </body>
 </html>

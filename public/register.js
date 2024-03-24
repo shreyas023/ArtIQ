@@ -9,6 +9,7 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
         },
         body: new URLSearchParams(formData)
     }).then(response => {
-        window.location.href = 'homepage.html';
+        // window.location.href = 'homepage.html';
+        console.log("successfully registered");
     });
 });

@@ -1,52 +1,111 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
+    box-sizing: border-box;
+
 }
 
-.login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.error-message {
+#error-message,#success-message {
     color: red;
     margin-top: 10px;
+}
+
+
+
+.account-page{
+	padding: 50px 0;
+    background: url(assets/bg.png) repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.account-page::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/bg.png') repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+.account-page::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 0;
+}
+.form-container{
+	background: radial-gradient(#fff,#E6E5E5);
+	width: 300px;
+	height: 400px;
+	position: relative;
+	text-align: center;
+	padding: 20px 0;
+	margin: auto;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	border: 2px solid #c6c6c6;
+    z-index: 1;
+}
+.form-container span{
+	font-weight: bold;
+	padding: 0 10px;
+	color: #555;
+	cursor: pointer;
+	width: 100px;
+	display: inline-block;
+}
+.form-btn{
+	display: inline-block;
+
+}
+.form-container form{
+	max-width: 280px;
+	position: absolute;
+	top: 130px;
+    margin: 0 10px;
+	transition: transform 0.3s;
+}
+.form-container form input{
+	width: 280px;
+	height: 30px;
+    padding: 0 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+}
+.form-container form .btn{
+	width: 80%;
+	border: none;
+	cursor: pointer;
+	margin: 10px 0;
+    background: #ff523b;
+}
+.form-container form .btn:focus{
+	outline: none;
+}
+#login-form{
+	left: -300px;
+
+}
+#register-form{
+	left: 0;
+
+}
+.form-container form a{
+	font-size: 12px;
+}
+#Indicator{
+	width: 100px;
+	border: none;
+	background: #ff523b;
+	height: 3px;
+	margin-top: 8px;
+	transform: translateX(100px);
+	transition: transform 0.3s;
 }
