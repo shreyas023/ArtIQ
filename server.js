@@ -9,7 +9,6 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Create a MySQL connection
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -52,42 +51,12 @@ app.post('/register', async (req, res) => {
       }
 
       console.log('User registered:', result);
-      console.log('sab theek toh hai');
-      res.redirect('/home.html');
+      res.redirect('/homepage.html');
     });
   } catch (error) {
     console.error('Error hashing password:', error);
     res.status(500).send('Internal Server Error');
   }
-});
-
-// Login endpoint
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-
-  // Check user in the database
-  const query = 'SELECT * FROM login_register WHERE username = ?';
-  db.query(query, [username], async (err, results) => {
-    if (err) {
-      console.error('Login failed: ' + err.message);
-      res.status(500).send('Login failed');
-      return;
-    }
-
-    if (results.length === 0) {
-      res.status(401).send('User not found');
-      return;
-    }
-
-    const user = results[0];
-    const match = await bcrypt.compare(password, user.password);
-
-    if (match) {
-      res.redirect('/home.html');
-    } else {
-      res.status(401).send('Password is incorrect');
-    }
-  });
 });
 
 app.listen(port, () => {

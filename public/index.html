@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Register</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Register</h2>
-        <form id="register-form">
-            <input type="text" id="name" placeholder="Name" name="name" required>
-            <input type="text" id="new-username" placeholder="Username" name="username" required>
-            <input type="password" id="new-password" placeholder="Password" name="password" required>
-            <button type="submit">Register</button>
-        </form>
-        <p id="success-message"></p>
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="text" id="new-name" placeholder="Name" name="name" required>
-            <input type="text" id="username" placeholder="Username" name="username" required>
-            <input type="password" id="password" placeholder="Password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p id="error-message"></p>
-    </div>
+
+    <div class="account-page">
+
+                    <div class="form-container">
+
+                        <div class="form-btn">
+                            <span onclick="left()">Login</span>
+                            <span onclick="right()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="login-form">
+                            <input type="text" id="new-name" placeholder="Name" name="name" required>
+                            <input type="text" id="username" placeholder="Username" name="username" required>
+                            <input type="password" id="password" placeholder="Password" name="password" required>
+                            <button type="submit" class="btn">Login</button>
+                            <p id="error-message"></p>
+                        </form>
+
+                        <form id="register-form">
+                            <input type="text" id="name" placeholder="Name" name="name" required>
+                            <input type="text" id="new-username" placeholder="Username" name="username" required>
+                            <input type="password" id="new-password" placeholder="Password" name="password" required>
+                            <button type="submit" class="btn">Register</button>
+                            <p id="success-message"></p>
+                        </form>
+
+                    </div>
+            </div>
+
 
     <script src="register.js"></script>
     <script src="login.js"></script>
+    <script>
+        var LoginForm = document.getElementById("login-form");
+        var RegForm = document.getElementById("register-form");
+        var Indicator = document.getElementById("Indicator");
+
+        function right() {
+
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)"
+            Indicator.style.transform = "translateX(100px)"
+        }
+        function left() {
+
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)"
+            Indicator.style.transform = "translateX(0px)"
+        }
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,103 @@
+body{
+    background-color: #000000;
+color: aliceblue;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #a9e84a;
+    color: black;
+
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    
+    color: white;
+}
+
+/* Position the menu items */
+.topnav .leftmost {
+    float: left;
+}
+
+.topnav .middle {
+    float: none;
+    margin-left: 20px;
+}
+
+.topnav .rightmost {
+    float: right;
+}
+.second{
+    position: absolute;
+    display: flex;
+    margin: 0 auto;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    padding-bottom: 0;
+
+}
+p.one{
+    font-size: 300%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+
+.search-container {
+position: relative;
+width: 200px; /* Set the width as per your design */
+height: 20px;
+display: flex;
+align-items: center;
+border-radius: 2px 2px 2px 2px;
+}
+
+.search-input-wrapper {
+position: relative;
+}
+
+.search-input {
+padding-right: 40px; /* Adjust padding to accommodate the button */
+width: 300px;
+padding: 10px;
+border-radius:20px 20px 20px 20px;
+
+}
+
+.search-button {
+position: absolute;
+top: 5px;
+right: 6px;
+height: 80%;
+width: 40px; /* Adjust width as per your design */
+border: none;
+border-radius: 20px 20px 20px 20px;
+background-color: #cae655;
+cursor: pointer;
+}
+
+.search-icon {
+font-size: 16px; /* Adjust font size as per your design */
+}
+.third{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
