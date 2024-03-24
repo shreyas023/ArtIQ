@@ -1,4 +1,20 @@
-// Load users from local storage or initialize an empty array
+// document.getElementById('login-form').addEventListener('submit', function(e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(this);
+//     fetch('/login', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/x-www-form-urlencoded'
+//         },
+//         body: new URLSearchParams(formData)
+//     }).then(response => {
+//         window.location.href = 'homepage.html';
+//     });
+// });
+
+
+
 var users = JSON.parse(localStorage.getItem('users')) || [];
 
 
@@ -18,7 +34,12 @@ function login(event) {
     // Get username and password from the form
     var oldusername = document.getElementById('username').value;
     var oldpassword = document.getElementById('password').value;
-    var name = document.getElementById('newname').value;
+    var name = document.getElementById('new-name').value;
+
+    if(name===null)
+    {
+        name="guest";
+    }
 
     // Check if the username and password match any user in the list
     var user = users.find(function(user) {
@@ -33,10 +54,10 @@ function login(event) {
         });
         alert('Login successful!');
         // You can redirect to another page or perform any other action here
-        window.location.href = 'ok.html?name=' + encodeURIComponent(name);
+        window.location.href = 'homepage.html';
     } else {
         // If no user is found, display an error message
-        var loginError = document.getElementById('login-error');
+        var loginError = document.getElementById('error-message');
         loginError.textContent = 'Invalid username or password';
     }
 }
@@ -57,7 +78,7 @@ function signup(event) {
 
     // If the username is already taken, display an error message
     if (existingUser) {
-        var signupSuccess = document.getElementById('signup-success');
+        var signupSuccess = document.getElementById('success-message');
         signupSuccess.textContent = 'Username already exists. Please choose another one.';
     } else {
         // Add the new user to the list
@@ -69,7 +90,7 @@ function signup(event) {
         });
 
         // Display success message
-        var signupSuccess = document.getElementById('signup-success');
+        var signupSuccess = document.getElementById('success-message');
         signupSuccess.textContent = 'Sign up successful!';
         // You may want to clear the form here if needed
         alert('Sign up successful!');
@@ -78,7 +99,7 @@ function signup(event) {
 }
 
 // Add event listener to the signup form
-document.getElementById('signup-form').addEventListener('submit', signup);
+document.getElementById('register-form').addEventListener('submit', signup);
 
 // Add event listener to the login form
 document.getElementById('login-form').addEventListener('submit', login);
