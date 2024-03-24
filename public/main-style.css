@@ -1,103 +1,210 @@
-body{
-    background-color: #000000;
-color: aliceblue;
-}
-/* Add a black background color to the top navigation */
-.topnav {
-    
-    overflow: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Barrio&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-/* Style the links inside the navigation bar */
+body {
+    background-color: #000000;
+    color: aliceblue;
+}
+
+.topnav {
+    height: 100px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000640;
+}
+
 .topnav a {
-    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
     background-color: #a9e84a;
     color: black;
-
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
-    
     color: white;
 }
 
-/* Position the menu items */
 .topnav .leftmost {
-    float: left;
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.leftmost a {
+    text-decoration: none;
+    font-size: 40px;
+    font-family: "Barrio", system-ui;
 }
 
 .topnav .middle {
-    float: none;
-    margin-left: 20px;
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .topnav .rightmost {
-    float: right;
-}
-.second{
-    position: absolute;
+    margin: 0 25px;
     display: flex;
-    margin: 0 auto;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    border-radius: 2px;
-    padding-bottom: 0;
-
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-p.one{
-    font-size: 300%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+.second {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 100px;
+}
+
+.para {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.two{
+    font-size: 16px;
+}
+
+.third {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.one {
+    font-size: 80px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-weight: 300;
 }
 
 .search-container {
-position: relative;
-width: 200px; /* Set the width as per your design */
-height: 20px;
-display: flex;
-align-items: center;
-border-radius: 2px 2px 2px 2px;
+    position: relative;
+    width: 200px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px 2px 2px 2px;
 }
 
 .search-input-wrapper {
-position: relative;
+    position: relative;
 }
 
 .search-input {
-padding-right: 40px; /* Adjust padding to accommodate the button */
-width: 300px;
-padding: 10px;
-border-radius:20px 20px 20px 20px;
-
+    padding-right: 40px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .search-button {
-position: absolute;
-top: 5px;
-right: 6px;
-height: 80%;
-width: 40px; /* Adjust width as per your design */
-border: none;
-border-radius: 20px 20px 20px 20px;
-background-color: #cae655;
-cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    height: 80%;
+    width: 40px; /* Adjust width as per your design */
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #cae655;
+    cursor: pointer;
 }
 
 .search-icon {
-font-size: 16px; /* Adjust font size as per your design */
+    font-size: 16px; /* Adjust font size as per your design */
 }
-.third{
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+#user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.third .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.col{
+    flex-basis: 50%;
+    width: 40%;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #000640;
+    gap: 30px;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    width: 100%;
+    align-items: flex-start;
+    text-decoration: none;
+    color: white;
+    margin: 20px 0;
+}
+.leftmost a,.middle a{
+    text-decoration: none;
+    color: white;
+}
+.foot .middle{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.download{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+.download i{
+    font-size: 30px;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.images img{
+    width: 200px;
+}
+
+.foot .leftmost{
+    flex-basis: 30%;
+    text-align: justify;
 }

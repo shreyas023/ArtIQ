@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Homepage</title>
     <link rel="stylesheet" href="main-style.css">
+    <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
     <div class="topnav">
         <div class="leftmost">
-            <a class="active" href="#home">Skillswap</a>
+            <a class="active" href="#home">ArtIQ</a>
         </div>
         <div class="middle">
             <a href="#categories">All Categories</a>
@@ -18,43 +22,82 @@
             <a href="#Special offers">Special offers</a>
         </div>
         <div class="rightmost">
-            <a href="#login">Log In</a>
-            <a href="#freetrial">Free Trial</a>
+            <a href="#login" id="user-name"></a>
+            <a href="#freetrial"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
         </div>
     </div>
+
     <div class="second">
-        <table>
-            <tr>
-                <td>
-                    <video width="500px" height="300px" controls>
-                        <source src="Untitled video - Made with Clipchamp.mp4 " type="video/mp4">
-                </td>
-                <td>
-                    <p class="one">Learn new <br>skills.Easily</p>
-                    <p class=""><br>We give you unlimited access to best courses from best specialist <br>to learn thousands of practical lessons in a multitude of fields.</p><br>
-                    <div class="search-container">
-                        <div class="search-input-wrapper">
-                            <input type="text" class="search-input" placeholder="Find your passion right now" />
-                            <button class="search-button">
-                                <i class="search-icon">➤</i>
-                            </button>
-                        </div>
-                    </div>   
-                    </div>
-                </td>
-            </tr>
-            
-        </table>
-        
-    </div>
-    <div>
-        <p class="third">Our solutions</p>
+        <div class="video">
+            <video height="500px" loop muted autoplay>
+                <source src="assets/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="para">
+            <p class="one">Learn new <br>skills. <span style="text-decoration: underline; text-decoration-color: blueviolet;">Easily</span></p>
+            <p class="two"><br>We give you unlimited access to best courses from best specialist <br>to learn
+                thousands of practical lessons in a multitude of fields.</p><br>
+
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" placeholder="Find your passion right now" />
+                    <button class="search-button">
+                        <i class="search-icon">➤</i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-   
+    <div class="third">
+        <div class="row">
+            <div class="col">
+                For teacher
+            </div>
+            <div class="col">
+                For student
+            </div>
+        </div>
+    </div>
 
-   
-   
+    <div class="third">
+        <div class="row">
+            <div class="col">
+                
+            </div>
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <div class="leftmost">
+                <a class="active" href="#home">ArtIQ</a>
+                <br><br>
+                <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access to best courses from best specialist to learn thousands of practical lessons in a multitude of fields.</p>
+            </div>
+            <div class="middle">
+                <a href="#categories">All Categories</a>
+                <a href="#Our solutions">Our solutions</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#Special offers">Special offers</a>
+            </div>
+            <div>
+                <div class="download">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="images">
+                    <img src="assets/playstore.png" alt="">
+                </div>
+            </div>
+        </div>
+        <p>© 2024 ArtIQ. All rights reserved</p>
+    </footer>
 
     <script>
         function getParameterByName(name, url) {
@@ -71,10 +114,12 @@
         var name = getParameterByName('name');
         // Check if the name parameter exists and display it
         if (name) {
-            document.getElementById('user-name').textContent = 'Welcome, ' + name + '!';
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
         } else {
-            document.getElementById('user-name').textContent = 'Welcome, guest!';
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
         }
     </script>
+
 </body>
+
 </html>
