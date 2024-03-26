@@ -92,7 +92,56 @@ body {
     padding: 50px 0;
     display: flex;
     justify-content: center;
+    gap: 100px;
     align-items: center;
+}
+.third a{
+    text-decoration: none;
+}
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    border: white 1px solid;
+    border-radius: 20px 20px 20px 20px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    text-align: left;
+    width: 50%;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+}
+.col p{
+    z-index: 1;
+    color: white;
+    font-size: 40px;
+}
+.teacher{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(assets/teacher.jpg);
+    background-size: cover;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.teacher:hover{
+    transform: scale(1.1);
+}
+.student{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(assets/student.jpg);
+    background-size: cover;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.student:hover{
+    transform: scale(1.1);
 }
 
 p.one {
@@ -143,17 +192,8 @@ p.one {
     align-items: center;
 }
 
-.third .row{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-}
 
-.col{
-    flex-basis: 50%;
-    width: 40%;
-}
+
 
 footer{
     display: flex;
@@ -207,4 +247,14 @@ footer{
 .foot .leftmost{
     flex-basis: 30%;
     text-align: justify;
+}
+
+.fourth{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    padding: 40px;
 }
