@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="main-style.css">
+    <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+    <script src="Angular/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="topnav">
+        <div class="leftmost">
+            <a class="active" href="#home">ArtIQ</a>
+        </div>
+        <div class="middle">
+            <a href="#categories">All Categories</a>
+            <a href="#Special offers">Opportunities</a>
+            <a href="#Our solutions">Community</a>
+            <a href="#pricing">Contact</a>
+        </div>
+        <div class="rightmost">
+            <a href="#login" id="user-name"></a>
+            <a href="#freetrial"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+        </div>
+    </div>
+
+    <div class="fourth">
+        <h1 id="welcome"></h1>
+        <br>
+        <p>Fill the following details to start your journey:</p>
+        <br>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name" required ng-model="name"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email" required ng-model="email"></td>
+                </tr>
+                <tr>
+                    <td>Class:</td>
+                    <td>
+                        <select id="class" required ng-model="class">
+                            <option value="">Select Class</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Creative Writing">Creative Writing</option>
+                            <option value="Film & Video">Film & Video</option>
+                            <option value="Fine Art">Fine Art</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Illustration">Illustration</option>
+                            <option value="Music">Music</option>
+                            <option value="Photography">Photography</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course name:</td>
+                    <td><input type="text" id="course" required ng-model="course"></td>
+                </tr>
+                <tr>
+                    <td>Description about the course:</td>
+                    <td><textarea id="message" rows="5" required ng-model="message"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Course resources:</td>
+                    <td><input type="file" id="resources" required ng-model="resources"></td>
+                </tr>
+                <tr>
+                    <td>Estimated time to complete the course:</td>
+                    <td><input type="number" id="time" required ng-model="time"></td>
+                </tr>
+                <tr>
+                    <td>Estimated Price:</td>
+                    <td><input type="number" id="price" required ng-model="price"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" id="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <div class="third course-content">
+            <div class="col1">
+                <h3 ng-bind="course"></h3>
+            </div>
+            <div class="col1">
+                <p ng-bind="message"></p>
+                <div style="display: flex; flex-direction: row; justify-content: space-between">
+                    <span ng-bind="time"></span>
+                    <span ng-bind="price"></span>
+                    <span ng-bind="class"></span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <div class="leftmost">
+                <a class="active" href="#home">ArtIQ</a>
+                <br><br>
+                <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
+                    to best courses from best specialist to learn thousands of practical lessons in a multitude of
+                    fields.</p>
+            </div>
+            <div class="middle">
+                <a href="#categories">All Categories</a>
+                <a href="#Special offers">Opportunities</a>
+                <a href="#Our solutions">Community</a>
+                <a href="#pricing">Contact</a>
+            </div>
+            <div>
+                <div class="download">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="images">
+                    <img src="assets/playstore.png" alt="">
+                </div>
+            </div>
+        </div>
+        <p>© 2024 ArtIQ. All rights reserved</p>
+    </footer>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Retrieve the name parameter from the URL
+        var name = getParameterByName('name');
+        // Check if the name parameter exists and display it
+        if (name) {
+            document.getElementById('welcome').innerHTML = 'Welcome, ' + name + '!';
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+            document.getElementById('name').value = name;
+        } else {
+            document.getElementById('welcome').innerHTML = 'Welcome, guest!';
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+            document.getElementById('name').value = 'guest';
+        }
+
+        // angular.module('myApp', []).controller('myCtrl', function ($scope) {
+            
+        // })
+    </script>
+</body>
+</html>
