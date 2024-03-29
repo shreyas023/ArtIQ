@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtIQ</title>
+  <link rel="stylesheet" href="main-style.css">
+  <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Profiles</title>
+    <style>
+    
+      @import url("https://fonts.googleapis.com/css2?family=Barrio&display=swap");
+
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .abcd{
+      display: flex;
+  }
+  
+  .topnav {
+    height: 100px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000000;
+    transition-duration: 0.3s;
+    border-bottom: white 1px solid;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.3s;
+}
+
+
+.topnav a.active {
+    color: white;
+}
+
+.topnav .leftmost {
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition-duration: 0.3s;
+}
+
+.leftmost a {
+    text-decoration: none;
+    font-size: 40px;
+    font-family: "Barrio", system-ui;
+    transition-duration: 0.3s;
+}
+
+.leftmost a:hover{
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
+
+.topnav .middle {
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition-duration: 0.3s;
+}
+
+.middle a:hover, .rightmost a:hover{
+    background-color: #a9e84a;
+    color: black;
+    transition-duration: 0.3s;
+}
+
+.topnav .rightmost {
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+    .sidebar {
+       width: 350px;  color: #000000; height: 100vh; margin:50px; box-sizing: border-box;
+       }
+    .profile-pic { 
+      width: 100px; height: 100px; background-color: #ddd; border-radius: 50%; margin-bottom: 20px;align-items: center;
+      justify-content: center;display: flex;
+     }
+    .sidebar h3, .sidebar a {
+       color: rgb(0, 0, 0); text-decoration: none;
+       }
+    .sidebar p {
+       color: #000000; 
+      }
+    .links { 
+      margin-top: 20px;
+      
+     }
+    .links a {
+       display: block; 
+       color: #000000;
+       margin-bottom: 10px;
+       }
+    .content {
+               margin-left: 250px; 
+               padding: 20px; 
+              }
+  
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: black;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      transition: background-color 1.3s ease;
+    }
+    .card {
+      display: flex;
+      padding: 20px;
+      margin: 10px;
+      cursor: pointer;
+      
+    }
+    .card:hover {
+      
+      text-decoration: wavy;
+      text-decoration-color: #860007;
+      text-decoration-style: solid;
+      color: #860007;
+      
+      
+    }
+    .title {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile{
+      text-decoration: underline;
+      text-decoration-thickness:5px ;
+      text-decoration-color: #860007;
+      text-decoration-style: solid;
+    }
+    
+    footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #000640;
+    gap: 30px;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    width: 100%;
+    align-items: flex-start;
+    text-decoration: none;
+    color: white;
+    margin: 20px 0;
+}
+.leftmost a,.middle a{
+    text-decoration: none;
+    color: white;
+}
+.foot .middle{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.foot .leftmost{
+    flex-basis: 30%;
+    text-align: justify;
+}
+  
+    </style>
+</head>
+<body>
+  <div class="topnav">
+    <div class="leftmost">
+        <a class="active" href="#" id="home">ArtIQ</a>
+    </div>
+    <div class="middle">
+        <a href="#" id="categories">All Categories</a>
+        <a href="#" id="opportunities">Opportunities</a>
+        <a href="#" id="community">Community</a>
+        <a href="#" id="contact">Contact</a>
+    </div>
+    <div class="rightmost">
+        <a href="#" id="user-name"></a>
+        <a href="#" id="cart"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+    </div>
+</div>
+
+
+
+   <div class="abcd">
+    <div class="sidebar">
+        <div class="profile-pic"><img src="assets/profilepic.png" height="110px" width="110px" border-radius: 25px;
+            border: 2px solid #73AD21;>
+        </div>
+        <h3><!-- Name --></h3>
+        <p><!-- Bio --></p>  
+
+        
+        <div class="links" style="color: rgb(0, 0, 0);">
+            &nbsp;&nbsp;&nbsp;&nbsp;John Doe<br>
+             Animation Director <br>
+          
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--<br>
+          Followers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Following <br><br><br>
+          0 Projects<br><br><br>
+          0 Posts<br><br><br>
+          <a href="" style="font-style: italic;">Link personal website</a>
+        </div>
+      </div>
+      
+    <div class="content">
+        <div class="container">
+            <div class="card">
+              <div class="profile" style="color: #860007;  font-size: 24px;
+              text-align: center;
+              margin-bottom: 20px;">Profile
+
+              </div>
+              
+            </div>
+            <div class="card">
+              <div class="title" style="color: #860007;  font-size: 24px;
+              text-align: center;
+              margin-bottom: 20px;">Achievements</div>
+              <!-- Achievements Content -->
+            </div>
+        </div>
+        <div style="margin-top: 10px;color: #000000;"><br>
+          <span style="font-size: 24px; color: #000000;"><b>About me</span><br><br>
+          Heyy,This is John Doe!
+        </div>
+   </div>
+          
+          
+      </div>
+
+      <footer>
+        <div class="foot">
+            <div class="leftmost">
+                <a class="active" href="#">ArtIQ</a>
+                <br><br>
+                <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
+                    to best courses from best specialist to learn thousands of practical lessons in a multitude of
+                    fields.</p>
+            </div>
+            <div>
+                <div class="download">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="images">
+                    <img src="assets/playstore.png" alt="">
+                </div>
+            </div>
+            <div class="top">
+                <a href="#top"><i class="fa fa-arrow-up"></i></a>
+            </div>
+        </div>
+        <p style="color: white;">© 2024 ArtIQ. All rights reserved</p>
+    </footer>
+      
+    <script>
+      function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, '\\$&');
+          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+
+      // Retrieve the name parameter from the URL
+      var name = getParameterByName('name');
+      // Check if the name parameter exists and display it
+      if (name) {
+          document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+          document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=' + encodeURIComponent(name);
+          document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+          document.getElementById('teacher').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+          document.getElementById('community').href = 'http://localhost:3000/community.html?name=' + encodeURIComponent(name);
+          document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=' + encodeURIComponent(name);
+          document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+          document.getElementById('student').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+          document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=' + encodeURIComponent(name);
+          document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=' + encodeURIComponent(name);
+          function nav() {
+              window.location.href = 'http://localhost:3000/opportunities.html?name=' + encodeURIComponent(name);
+          }
+      } else {
+          document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+          document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=guest';
+          document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=guest';
+          document.getElementById('community').href = 'http://localhost:3000/community.html?name=guest';
+          document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=guest';
+          document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=guest';
+          document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=guest';
+          document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=guest';
+      }
+  </script>
+
+</body>
+
+</html>

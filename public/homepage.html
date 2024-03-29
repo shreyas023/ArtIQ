@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Homepage</title>
+    <title>ArtIQ</title>
     <link rel="stylesheet" href="main-style.css">
     <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
 
@@ -13,17 +13,17 @@
 <body>
     <div class="topnav">
         <div class="leftmost">
-            <a class="active" href="#home">ArtIQ</a>
+            <a class="active" href="#" id="home">ArtIQ</a>
         </div>
         <div class="middle">
-            <a href="#categories">All Categories</a>
-            <a href="#Special offers">Opportunities</a>
-            <a href="#Our solutions">Community</a>
-            <a href="#pricing">Contact</a>
+            <a href="#" id="categories">All Categories</a>
+            <a href="#" id="opportunities">Opportunities</a>
+            <a href="#" id="community">Community</a>
+            <a href="#" id="contact">Contact</a>
         </div>
         <div class="rightmost">
-            <a href="#login" id="user-name"></a>
-            <a href="#freetrial"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+            <a href="#" id="user-name"></a>
+            <a href="#" id="cart"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
         </div>
     </div>
 
@@ -42,7 +42,7 @@
             <div class="search-container">
                 <div class="search-input-wrapper">
                     <input type="text" class="search-input" placeholder="Find your passion right now" />
-                    <button class="search-button">
+                    <button class="search-button" onclick="nav()">
                         <i class="search-icon">➤</i>
                     </button>
                 </div>
@@ -51,14 +51,14 @@
     </div>
 
     <div class="third">
-        <a href="#">
+        <a href="#" id="teacher">
         <div class="col teacher">
-            <p>For teacher <i class="fa-solid fa-arrow-right"></i></p>
+            <p>For teacher</p>
         </div>
     </a>
-        <a href="#">
+        <a href="#" id="student">
         <div class="col student">
-            <p>For student <i class="fa-solid fa-arrow-right"></i></p>
+            <p>For student</p>
         </div>
     </a>
     </div>
@@ -70,25 +70,21 @@
                 <p>Moreover, ArtIQ offers opportunities for users to monetize their skills by providing paid lessons or services, allowing them to earn while they teach. This incentivizes active participation and rewards users for sharing their expertise with others.</p>
                 <p>Overall, ArtIQ stands out as a versatile platform that caters to the diverse learning needs and interests of its users while promoting a culture of knowledge exchange and mutual support. Whether you're looking to expand your skill set or share your passion with others, ArtIQ provides a convenient and rewarding platform to do so.</p>
             </div>
-            <div class="col">
-                a video should go here
+            <div class="content">
+                <video height="300px" loop muted autoplay>
+                    <source src="assets/video2.mp4" type="video/mp4">
+                </video>
             </div>
     </div>
 
     <footer>
         <div class="foot">
             <div class="leftmost">
-                <a class="active" href="#home">ArtIQ</a>
+                <a class="active" href="#">ArtIQ</a>
                 <br><br>
                 <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
                     to best courses from best specialist to learn thousands of practical lessons in a multitude of
                     fields.</p>
-            </div>
-            <div class="middle">
-                <a href="#categories">All Categories</a>
-                <a href="#Special offers">Opportunities</a>
-                <a href="#Our solutions">Community</a>
-                <a href="#pricing">Contact</a>
             </div>
             <div>
                 <div class="download">
@@ -100,6 +96,9 @@
                 <div class="images">
                     <img src="assets/playstore.png" alt="">
                 </div>
+            </div>
+            <div class="top">
+                <a href="#top"><i class="fa fa-arrow-up"></i></a>
             </div>
         </div>
         <p>© 2024 ArtIQ. All rights reserved</p>
@@ -121,8 +120,27 @@
         // Check if the name parameter exists and display it
         if (name) {
             document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+            document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=' + encodeURIComponent(name);
+            document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+            document.getElementById('teacher').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+            document.getElementById('community').href = 'http://localhost:3000/community.html?name=' + encodeURIComponent(name);
+            document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=' + encodeURIComponent(name);
+            document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+            document.getElementById('student').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+            document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=' + encodeURIComponent(name);
+            document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=' + encodeURIComponent(name);
+            function nav() {
+                window.location.href = 'http://localhost:3000/opportunities.html?name=' + encodeURIComponent(name);
+            }
         } else {
             document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+            document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=guest';
+            document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=guest';
+            document.getElementById('community').href = 'http://localhost:3000/community.html?name=guest';
+            document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=guest';
+            document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=guest';
+            document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=guest';
+            document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=guest';
         }
     </script>
 

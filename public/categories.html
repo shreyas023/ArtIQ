@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtIQ | Categories</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main-style.css">
+    <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+<style>
+    .merged{
+      display: flex;
+      flex-direction: row;
+      width: 1000px;
+    }
+        .unlock{
+        font-family: 'Jost', sans-serif;
+        display: flex;
+        font-weight: 600;
+        font-size: 25px;
+        color: #000000;
+        }
+        .course-sample img {
+      width: 800px;
+      height: 400px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 5px;
+      
+    }
+        .name{
+        font-family: 'Jost', sans-serif;
+      font-weight: 600; 
+      font-size:20px;
+      font-style: normal;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    
+        }
+    
+        .description{
+    
+      font-family: 'Jost', sans-serif;
+      font-weight: 400; 
+      font-size:20px;
+      font-style: normal;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-left:40px;
+        }
+    
+    
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+    
+    .sidebar {
+      background-color: #000000;
+      width: 220px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+      overflow-y: auto;
+      transition: width 0.3s;
+      z-index: 0;
+    }
+    
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #eee;
+      display: block;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+    }
+    
+    .sidebar ul li a:hover {
+      background-color: #5a0781;
+    }
+    
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+      width: 100%;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    
+    
+    .course-sample p {
+      color: #666;
+    }
+    
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    
+    .course {
+      width: 600px;
+      margin: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      justify-content: space-between;
+    }
+    
+    .course img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    
+    .course p {
+      color: #444;
+    }
+    
+    .course:hover {
+      transform: translateY(-5px);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="topnav" style="z-index: 1;">
+        <div class="leftmost">
+            <a class="active" href="#" id="home">ArtIQ</a>
+        </div>
+        <div class="middle">
+            <a href="#" id="categories">All Categories</a>
+            <a href="#" id="opportunities">Opportunities</a>
+            <a href="#" id="community">Community</a>
+            <a href="#" id="contact">Contact</a>
+        </div>
+        <div class="rightmost">
+            <a href="#" id="user-name"></a>
+            <a href="#" id="cart"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+        </div>
+    </div>
+<!-- <div class="sidebar">
+  <ul>
+    <br><br><br><br><br><br><br><br><br>
+    <li><a href="#">All Classes</a></li>
+    <li><a href="#">CREATE</a></li>
+    <li><a href="#">Animation</a></li>
+    <li><a href="#">Creative Writing</a></li>
+    <li><a href="#">Film & Video</a></li>
+    <li><a href="#">Fine Art</a></li>
+    <li><a href="#">Graphic Design</a></li>
+    <li><a href="#">Illustration</a></li>
+    <li><a href="#">Music</a></li>
+    <li><a href="#">Photography</a></li>
+    <li><a href="#">UI/UX Design</a></li>
+  </ul>
+</div> -->
+
+<div class="main-content">
+  <h1 style="font-family: 'Quintessential', serif;
+  font-weight: 400; font-size: 100px;
+  font-style: normal;">Animation for social media</h1>
+  <div class="merged">
+    <div class="course-sample">
+        <img src="animation-course.jpg" alt="Sample Course Image">
+        <p class="unlock">Unlock Your Creative Animation Journey</p>
+      </div>
+  </div>
+  
+  <div class="course-list">
+    <div class="course">
+      <img src="imageofanimation1.png" alt="Course 1 Image">
+      <p class="name">Fundamentals of 3D Animation</p><br>
+      <p class="description">Learn the basics of modeling, texturing, rigging, and animating characters and objects using industry-standard software</p>
+      
+    </div>
+    <div class="course">
+      <img src="imageofanimation2.png" alt="Course 2 Image">
+      <p class="name">Character Design and Development</p>
+      <p class="description">Gain insights into storytelling and how to convey emotion through your animated creations</p>
+    </div>
+    </div>
+    <div class="course-list">
+    <div class="course">
+      <img src="imageofanimation3.png" alt="Course 3 Image">
+      <p class="name">Visual Effects for Animation</p>
+      <p class="description">Create compelling VFX, including particle systems, dynamic simulations, and compositing.</p>
+    </div>
+    <div class="course">
+        <img src="imageofanimation3.png" alt="Course 3 Image">
+        <p class="name">Visual Effects for Animation</p>
+        <p class="description">Create compelling VFX, including particle systems, dynamic simulations, and compositing.</p>
+      </div>
+    </div>
+    <div class="course-list">
+      <div class="course">
+        <img src="imageofanimation3.png" alt="Course 3 Image">
+        <p class="name">Visual Effects for Animation</p>
+        <p class="description">Create compelling VFX, including particle systems, dynamic simulations, and compositing.</p>
+      </div>
+      <div class="course">
+        <img src="imageofanimation3.png" alt="Course 3 Image">
+        <p class="name">Visual Effects for Animation</p>
+        <p class="description">Create compelling VFX, including particle systems, dynamic simulations, and compositing.</p>
+      </div>
+    <!-- Add more courses as needed -->
+  </div>
+</div>
+<footer>
+    <div class="foot" style="z-index: 1;">
+        <div class="leftmost">
+            <a class="active" href="#">ArtIQ</a>
+            <br><br>
+            <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
+                to best courses from best specialist to learn thousands of practical lessons in a multitude of
+                fields.</p>
+        </div>
+        <div>
+            <div class="download">
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <div class="images">
+                <img src="assets/playstore.png" alt="">
+            </div>
+        </div>
+        <div class="top">
+            <a href="#top"><i class="fa fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <p>© 2024 ArtIQ. All rights reserved</p>
+</footer>
+
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Retrieve the name parameter from the URL
+    var name = getParameterByName('name');
+    // Check if the name parameter exists and display it
+    if (name) {
+        document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+        document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=' + encodeURIComponent(name);
+        document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+        document.getElementById('teacher').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+        document.getElementById('community').href = 'http://localhost:3000/community.html?name=' + encodeURIComponent(name);
+        document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=' + encodeURIComponent(name);
+        document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+        document.getElementById('student').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+        document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=' + encodeURIComponent(name);
+        document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=' + encodeURIComponent(name);
+        function nav() {
+            window.location.href = 'http://localhost:3000/opportunities.html?name=' + encodeURIComponent(name);
+        }
+    } else {
+        document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+        document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=guest';
+        document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=guest';
+        document.getElementById('community').href = 'http://localhost:3000/community.html?name=guest';
+        document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=guest';
+        document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=guest';
+        document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=guest';
+        document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=guest';
+    }
+</script>
+
+</body>
+</html>

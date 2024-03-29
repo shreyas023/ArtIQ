@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barrio&display=swap");
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +12,20 @@
     margin-top: 10px;
 }
 
-
+.header{
+    position: absolute;
+    z-index: 1;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    left: 45%;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+    font-family: "Barrio", system-ui;
+    font-size: 40px;
+}
 
 .account-page{
 	padding: 50px 0;

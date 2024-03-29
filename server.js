@@ -8,6 +8,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(express.json());
 
 const db = mysql.createConnection({
   host: 'localhost',
@@ -58,6 +59,41 @@ app.post('/register', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+const multer  = require('multer');
+const upload = multer();
+
+app.post('/teacher', upload.none(), async (req, res) => {
+  console.log(req.body); // Log the request body to debug
+  const { Name, Email, Class, Course_name, Message, Time, Price } = req.body;
+
+  const query = 'INSERT INTO teacher (Name, Email, Class, Course_name, Message, Time, Price) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  db.query(query, [Name, Email, Class, Course_name, Message, Time, Price], (err, result) => {
+    if (err) {
+      console.error('Error inserting data: ' + err.message);
+      res.status(500).send('Error inserting data');
+    } else {
+      console.log('Data inserted successfully');
+      res.redirect('/homepage.html');
+    }
+  })
+})
+
+app.post('/payment',upload.none(), (req, res) => {
+  console.log(req.body); // Log the request body to debug
+  const { fname, card_type, card_number, expiry, cvv, pin, amount } = req.body;
+
+  const query = 'INSERT INTO payment (fname, card_type, card_number, expiry, cvv, pin, amount) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  db.query(query, [fname, card_type, card_number, expiry, cvv, pin, amount], (err, result) => {
+    if (err) {
+      console.error('Error inserting data: ' + err.message);
+      res.status(500).send('Error inserting data');
+    } else {
+      console.log('Data inserted successfully');
+      res.redirect('/homepage.html?name='+fname);
+    }
+  })
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

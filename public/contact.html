@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<title>ArtIQ | Contact</title>
+    <link rel="stylesheet" href="main-style.css">
+    <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom,#a9e84a, #ffffff);
+        overflow-x: hidden;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    .left-panel {
+        width: 60%;
+        background: linear-gradient(to bottom, #a9e84a, #ffffff);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .contact-header {
+        font-size: 80px;
+        color: black;
+        margin-bottom: 20px;
+        align-items: left;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .quote {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .social-icons, .social-icons .fa, .fab{
+        font-size: 24px;
+        color: black;
+        margin-right:10px;
+        align-items: center;
+    }
+
+    .right-panel {
+        width: 40%;
+        background-color: black;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px 20px 30px 30px;
+        box-shadow: #080c00 0px 0px 10px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        
+        
+    }
+
+    input[type="submit"] {
+        
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        color: black;
+        background-color: #a9e84a;
+       
+    }
+
+    .box{
+        border: #ffffff 0.5px solid;
+        margin-bottom: 10px;
+        padding: 30px;
+        width: 400px;
+    }
+</style>
+</head>
+<body>
+    <div class="topnav">
+        <div class="leftmost">
+            <a class="active" href="#" id="home">ArtIQ</a>
+        </div>
+        <div class="middle">
+            <a href="#" id="categories">All Categories</a>
+            <a href="#" id="opportunities">Opportunities</a>
+            <a href="#" id="community">Community</a>
+            <a href="#" id="contact">Contact</a>
+        </div>
+        <div class="rightmost">
+            <a href="#" id="user-name"></a>
+            <a href="#" id="cart"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="left-panel">
+        <div style=" font-family: 'Jost', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal; font-size: 30px; color: black;">Contact Us</div>
+        <div class="contact-header">Where creativity <br><span style="color: rgb(80, 78, 78);">meets connection.</span>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="right-panel">
+        
+
+        <form action="#" method="post">
+    <h1 style="color: white">Get in Touch!</h1><br>
+
+            <div class="box">
+                <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="foot">
+        <div class="leftmost">
+            <a class="active" href="#">ArtIQ</a>
+            <br><br>
+            <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
+                to best courses from best specialist to learn thousands of practical lessons in a multitude of
+                fields.</p>
+        </div>
+        <div>
+            <div class="download">
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <div class="images">
+                <img src="assets/playstore.png" alt="">
+            </div>
+        </div>
+        <div class="top">
+            <a href="#top"><i class="fa fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <p>© 2024 ArtIQ. All rights reserved</p>
+</footer>
+
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Retrieve the name parameter from the URL
+    var name = getParameterByName('name');
+    // Check if the name parameter exists and display it
+    if (name) {
+        document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+        document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=' + encodeURIComponent(name);
+        document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+        document.getElementById('teacher').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+        document.getElementById('community').href = 'http://localhost:3000/community.html?name=' + encodeURIComponent(name);
+        document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=' + encodeURIComponent(name);
+        document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+        document.getElementById('student').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+        document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=' + encodeURIComponent(name);
+        document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=' + encodeURIComponent(name);
+        function nav() {
+            window.location.href = 'http://localhost:3000/opportunities.html?name=' + encodeURIComponent(name);
+        }
+    } else {
+        document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+        document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=guest';
+        document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=guest';
+        document.getElementById('community').href = 'http://localhost:3000/community.html?name=guest';
+        document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=guest';
+        document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=guest';
+        document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=guest';
+        document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=guest';
+    }
+</script>
+</body>
+</html>
